@@ -1,30 +1,36 @@
-# Modern Portfolio Website
+# Portfolio Website with AI Chat
 
-A beautiful, responsive portfolio website with dark accents, glowing shadows, and modern UI principles. This project includes AI integration via Deepseek API through OpenRouter.
+A modern portfolio website built with React, TypeScript, and Vite, featuring an AI-powered chat assistant that helps visitors learn about skills, projects, and experience.
 
 ## Features
 
-- **Modern UI Design**: Dark theme with glowing accents and glass-morphism effects
-- **Responsive Layout**: Fully responsive design that works on all devices
-- **AI Integration**: Chat assistant powered by Deepseek API via OpenRouter
-- **Project Showcase**: Dynamic project display with filtering capabilities
-- **Animations**: Smooth animations and transitions using Framer Motion
-- **Admin Panel**: (Coming soon) Admin interface for managing projects and content
+- **Modern UI**: Built with React, TypeScript, and Tailwind CSS
+- **AI Chat Assistant**: Powered by OpenRouter API with LLM integration
+- **Dynamic Content**: Data fetched from Supabase backend
+- **Responsive Design**: Optimized for all devices
+- **Animations**: Smooth transitions and animations with Framer Motion
+- **SEO Friendly**: Optimized for search engines
 
-## Tech Stack
+## AI Chat Features
 
-- **Frontend**: React.js with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with custom theme
-- **Routing**: React Router
-- **Animations**: Framer Motion
-- **Icons**: React Icons
-- **AI Integration**: Deepseek API via OpenRouter
+- Context-aware conversations about portfolio content
+- Markdown formatting for better readability
+- Retrieval-augmented generation using Supabase data
+- Clear conversation functionality
+- Typing indicators and loading states
+
+## Technologies Used
+
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS, Framer Motion
+- **Backend**: Supabase (PostgreSQL, Auth, Storage)
+- **AI Integration**: OpenRouter API with various LLM models
+- **Deployment**: Vercel
 
 ## Getting Started
 
 ### Prerequisites
 
+- Node.js (v18+)
 - Node.js (v14 or higher)
 - npm or yarn
 
