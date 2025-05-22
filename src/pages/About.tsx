@@ -402,7 +402,7 @@ const About = () => {
           >
             <div className="md:w-100 md:h-100 w-80 h-80 rounded-full overflow-hidden border-2 border-purple-500/30 shadow-xl shadow-purple-500/10">
               <img
-                src="/src/assets/images/image1.PNG"
+                src={personalInfo?.profile_image_url}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />

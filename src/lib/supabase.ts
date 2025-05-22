@@ -111,6 +111,7 @@ export interface PersonalInfo {
   bio_short: string;
   bio_long: string;
   resume_url: string;
+  profile_image_url: string;
 }
 
 // API functions to fetch data from Supabase
