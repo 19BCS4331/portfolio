@@ -29,34 +29,9 @@ export default {
           "0%": { "background-position": "100%" },
           "100%": { "background-position": "-100%" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-15px)" },
-        },
-        "float-slow": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-30px)" },
-        },
-        "float-reverse": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(15px)" },
-        },
-        "pulse-slow": {
-          "0%, 100%": { opacity: "0.05" },
-          "50%": { opacity: "0.2" },
-        },
-        spin: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
-        },
       },
       animation: {
         shine: "shine 5s linear infinite",
-        float: "float 4s ease-in-out infinite",
-        "float-slow": "float-slow 6s ease-in-out infinite",
-        "float-reverse": "float-reverse 5s ease-in-out infinite",
-        "pulse-slow": "pulse-slow 7s ease-in-out infinite",
-        "spin-slow": "spin 20s linear infinite",
       },
     },
   },

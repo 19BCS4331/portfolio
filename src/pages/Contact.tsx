@@ -427,13 +427,13 @@ const Contact = () => {
 
         {/* FAQs Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          // initial={{ opacity: 0, y: 30 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-12"
         >
-          <div className="rounded-2xl p-8 bg-black border border-gray-800 shadow-xl backdrop-blur-sm overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10"></div>
+          <div className="rounded-2xl p-8 bg-black border border-gray-800 overflow-hidden relative">
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10"></div> */}
             <div className="relative z-20 flex flex-col md:flex-row md:items-start md:gap-8 w-full">
               <div className="md:w-1/3 mb-6 md:mb-0">
                 <h2 className="text-2xl font-bold text-white mb-4">
@@ -466,10 +466,10 @@ const Contact = () => {
                           value={faq.value}
                           className="border-none"
                         >
-                          <AccordionTrigger className="text-md px-4 py-3 text-gray-300 hover:no-underline cursor-pointer font-Poppins">
+                          <AccordionTrigger className="text-md px-4 py-3 text-gray-300 hover:no-underline cursor-pointer">
                             {index + 1}. {faq.question}
                           </AccordionTrigger>
-                          <AccordionContent className="px-4 pt-0 pb-4 text-gray-400 text-sm font-Poppins">
+                          <AccordionContent className="px-4 pt-0 pb-4 text-gray-400 text-sm">
                             {faq.answer}
                           </AccordionContent>
                         </AccordionItem>
