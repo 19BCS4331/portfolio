@@ -117,7 +117,7 @@ const Navbar = () => {
 
         {/* Bottom Tab Navigation */}
         <motion.div 
-          className="fixed bottom-0 left-0 right-0 w-[98%] mx-auto mb-5 rounded-full bg-black-100/90 backdrop-blur-md border-t border-gray-800 shadow-lg z-999999999"
+          className="fixed bottom-0 left-0 right-0 w-[100%] mx-auto mb-0 rounded-full bg-black border-t border-gray-800 shadow-lg z-999999999"
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.3 }}

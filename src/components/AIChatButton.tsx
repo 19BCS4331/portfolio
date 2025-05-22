@@ -9,7 +9,7 @@ const AIChatButton = () => {
     <>
       <motion.button
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-glow z-999999 cursor-pointer"
+        className="fixed bottom-28 right-6 md:bottom-6 md:right-6 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-glow z-999999 cursor-pointer"
         whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(145, 94, 255, 0.7)" }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, y: 20 }}

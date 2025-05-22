@@ -134,18 +134,42 @@ const AIChat: React.FC = () => {
   };
 
   // Check if response is unexpected or error-like
-  const isUnexpectedResponse = (response: string): boolean => {
-    const errorPatterns = [
-      /i('m| am) sorry, i couldn't generate/i,
-      /\d+\.\d+\.\d+/,  // Matches version numbers like 1.0.0
-      /features/i,
-      /init:/i,
-      /error/i,
-      /\(\w+\)$/  // Matches things like (0c1a1e1) - commit hashes
-    ];
-    
-    return errorPatterns.some(pattern => pattern.test(response));
-  };
+const isUnexpectedResponse = (response: string): boolean => {
+  // Exact error phrases to match
+  const exactErrorPhrases = [
+    "i'm sorry, i couldn't generate",
+    "i am sorry, i couldn't generate",
+    "i couldn't process that request",
+    "i'm having trouble understanding",
+    "i am having trouble understanding",
+    "i'm not able to provide",
+    "i am not able to provide",
+    "error occurred while processing",
+    "failed to process your request"
+  ];
+  
+  // Check for exact error phrases (case insensitive)
+  if (exactErrorPhrases.some(phrase => response.toLowerCase().includes(phrase))) {
+    return true;
+  }
+  
+  // Check for responses that are just version numbers or very short
+  if (/^\d+\.\d+\.\d+$/.test(response.trim())) {
+    return true;
+  }
+  
+  // Check for responses that are too short and don't make sense
+  if (response.trim().length < 15 && !/^(yes|no|maybe|sure|hi|hello)/i.test(response.trim())) {
+    return true;
+  }
+  
+  // Check for responses that are just commit hashes
+  if (/^\(\w{7,}\)$/.test(response.trim())) {
+    return true;
+  }
+  
+  return false;
+};
   
   // Get response from AI service
   const getAIResponse = async (userMessage: string) => {
@@ -218,12 +242,16 @@ const AIChat: React.FC = () => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed bottom-4 right-4 w-full max-w-md h-[600px] z-999999 flex flex-col bg-black border border-gray-800 rounded-xl shadow-2xl overflow-hidden"
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.9 }}
-          transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 30 }}
-        >
+        className="fixed inset-0 md:inset-auto md:bottom-4 md:right-4 w-full md:w-[450px] h-[100dvh] md:h-[600px] md:max-h-[80vh] z-[99999999] flex flex-col bg-black border border-gray-800 md:rounded-xl shadow-2xl overflow-hidden"
+        initial={{ opacity: 0, y: 20, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 20, scale: 0.9 }}
+        transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 30 }}
+        style={{
+          height: 'calc(100dvh - 70px)',
+          maxHeight: 'calc(100dvh - 70px)',
+        }}
+      >
           {/* Chat Header */}
           <div className="bg-gradient-to-r from-purple-900/80 to-black p-4 flex justify-between items-center border-b border-purple-500/30 backdrop-blur-sm">
             <div className="flex items-center">
